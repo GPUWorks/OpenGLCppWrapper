@@ -58,7 +58,7 @@ void GLImGUI::drawNode(SceneNode_t &node)
       if (nullptr != node.mesh())
         {
           std::string name("Mesh '" + node.mesh()->name() + "'");
-          ImGui::Text(name.c_str());
+          ImGui::Text("%s", name.c_str());
         }
       else
         {
@@ -69,7 +69,7 @@ void GLImGUI::drawNode(SceneNode_t &node)
         {
           std::stringstream ss;
           ss << node.worldTransform();
-          ImGui::Text(ss.str().c_str());
+          ImGui::Text("%s", ss.str().c_str());
           ImGui::TreePop();
         }
 

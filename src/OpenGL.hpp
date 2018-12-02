@@ -29,9 +29,6 @@ namespace opengl
 {
   //! \brief Create an OpenGL context. Call it before drawing
   //! primitives.
-#ifdef USE_GTKMM
-  void  createContext();
-#endif
 
   //! \brief Return if the OpenGL has been created or has not been
   //! created or has failed creating.

@@ -26,24 +26,23 @@ int main(int argc, char *argv[])
       usage(argv);
     }
 
-  IGLWindow *win;
+  std::unique_ptr<IGLWindow> win;
 
   switch (example)
     {
     case 1:
-      win = new GLExample01();
+      win = std::make_unique<GLExample01>();
+      win->start();
       break;
     case 2:
-      win = new GLExample02();
+      win = std::make_unique<GLExample02>();
+      win->start();
       break;
     default:
       std::cout << "Incorrect example id !" << std::endl;
       usage(argv);
-      break;
+      return -1;
     }
-
-  std::shared_ptr<IGLWindow> window(win);
-  window->start();
 
   return 0;
 }

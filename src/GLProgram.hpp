@@ -799,7 +799,8 @@ private:
         glCheck(glGetProgramiv(obj, GL_INFO_LOG_LENGTH, &length));
         std::vector<char> log(static_cast<size_t>(length));
         glCheck(glGetProgramInfoLog(obj, length, &length, &log[0U]));
-        m_error_msg += '\n' + &log[0U];
+        m_error_msg += '\n';
+        m_error_msg += &log[0U];
         LOGES("%s", m_error_msg.c_str());
       }
     else
